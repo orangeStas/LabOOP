@@ -5,7 +5,7 @@ import java.awt.*;
  * Created by OrangeUser on 21.02.2015.
  */
 public class main {
-    public static void main(String [] args){
+    public static void Main(String [] args){
         initializeForm();
     }
 
@@ -34,6 +34,8 @@ public class main {
         //left hand
         figures.insertFigure(new Line(300,140, 120, 160));
         figures.insertFigure(new Line(300,170, 120, 180));
+        figures.insertFigure(new Circle(100,155, 20, 30));
+        figures.insertFigure(new Arc(100, 140, 7, 30, 0, 200));
 
 
         for (Figures figure : figures.getListOfFigures()){
