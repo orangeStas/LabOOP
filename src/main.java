@@ -5,7 +5,7 @@ import java.awt.*;
  * Created by OrangeUser on 21.02.2015.
  */
 public class main {
-    public static void Main(String [] args){
+    public static void main(String [] args){
         initializeForm();
     }
 
