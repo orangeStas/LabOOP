@@ -1,3 +1,5 @@
+package FiguresPack;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -9,7 +11,7 @@ public  class Figures extends JPanel {
     private static ArrayList<Figures> listOfFigures = new ArrayList<Figures>();
 
     private Line line;
-    private Rectangle rectangle;
+    private FiguresPack.Rectangle rectangle;
     private Circle circle;
     private RoundRectangle roundRectangle;
     private Arc arc;
@@ -55,33 +57,33 @@ public  class Figures extends JPanel {
         return listOfFigures;
     }
 
-    Figures drawFigure(Figures figure){
-        if (figure.getClass() == Line.class) {
-            Figures paint = new Figures((Line)figure);
+    public Figures drawFigure(){
+        if (this.getClass() == Line.class) {
+            Figures paint = new Figures((Line)this);
             return paint;
         }
 
-        else if (figure.getClass() == Rectangle.class) {
-            Figures paint = new Figures((Rectangle) figure);
+        else if (this.getClass() == FiguresPack.Rectangle.class) {
+            Figures paint = new Figures((FiguresPack.Rectangle) this);
             return paint;
         }
 
-        else if (figure.getClass() == Circle.class) {
-            Figures paint = new Figures((Circle)figure);
+        else if (this.getClass() == Circle.class) {
+            Figures paint = new Figures((Circle)this);
             return paint;
         }
 
-        else if (figure.getClass() == RoundRectangle.class) {
-            Figures paint = new Figures((RoundRectangle) figure);
+        else if (this.getClass() == RoundRectangle.class) {
+            Figures paint = new Figures((RoundRectangle) this);
             return paint;
         }
 
-        else if (figure.getClass() == Arc.class) {
-            Figures paint = new Figures((Arc) figure);
+        else if (this.getClass() == Arc.class) {
+            Figures paint = new Figures((Arc) this);
             return paint;
         }
-
-        return null;
+        else
+            return null;
 
     }
 

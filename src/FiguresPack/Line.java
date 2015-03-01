@@ -1,11 +1,9 @@
-import java.awt.geom.Line2D;
-import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
+package FiguresPack;
 
 /**
  * Created by OrangeUser on 21.02.2015.
  */
-public class Line extends Figures{
+public class Line extends Figures {
 
     private int x1;
     private int y1;

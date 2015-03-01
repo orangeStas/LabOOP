@@ -1,7 +1,9 @@
+package FiguresPack;
+
 /**
  * Created by OrangeUser on 21.02.2015.
  */
-public class Circle extends Figures {
+public class Rectangle extends Figures {
 
     private int width;
     private int height;
@@ -9,26 +11,30 @@ public class Circle extends Figures {
     private int x;
     private int y;
 
-    public Circle(int  x, int  y, int width, int height){
+
+    public Rectangle(int  x, int  y, int width, int height){
         this.x = x;
         this.y = y;
         this.height = height;
         this.width = width;
     }
 
-    public int getXCirc(){
+
+    public int getXRect() {
         return x;
     }
 
-    public int getYCirc(){
+    public int getYRect() {
         return y;
     }
 
-    public int getWidthCirc() {
+    public int getWidthRect() {
         return width;
     }
 
-    public int getHeightCirc(){
+    public int getHeightRect() {
         return height;
     }
+
+
 }

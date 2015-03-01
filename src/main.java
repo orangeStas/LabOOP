@@ -1,3 +1,5 @@
+import FiguresPack.*;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -10,8 +12,11 @@ public class main {
     }
 
     public static void initializeForm(){
+
+
+
         JFrame frame = new JFrame();
-        frame.setTitle("Figures");
+        frame.setTitle("Lol");
         frame.setSize(new Dimension(800, 600));
         frame.setLocationRelativeTo(null);
         frame.setLayout(new GridBagLayout());
@@ -38,8 +43,9 @@ public class main {
         figures.insertFigure(new Arc(100, 140, 7, 30, 0, 200));
 
 
+
         for (Figures figure : figures.getListOfFigures()){
-            frame.add(figures.drawFigure(figure), new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.NORTH
+            frame.add(figure.drawFigure(), new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.NORTH
                     , GridBagConstraints.BOTH, new Insets(2, 2, 2, 2), 0, 0));
             System.out.println(figures.getFigureName(figure));
         }

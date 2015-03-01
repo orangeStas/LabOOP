@@ -1,9 +1,9 @@
-import java.awt.geom.Rectangle2D;
+package FiguresPack;
 
 /**
  * Created by OrangeUser on 21.02.2015.
  */
-public class Rectangle extends Figures{
+public class Circle extends Figures {
 
     private int width;
     private int height;
@@ -11,30 +11,26 @@ public class Rectangle extends Figures{
     private int x;
     private int y;
 
-
-    public Rectangle(int  x, int  y, int width, int height){
+    public Circle(int  x, int  y, int width, int height){
         this.x = x;
         this.y = y;
         this.height = height;
         this.width = width;
     }
 
-
-    public int getXRect() {
+    public int getXCirc(){
         return x;
     }
 
-    public int getYRect() {
+    public int getYCirc(){
         return y;
     }
 
-    public int getWidthRect() {
+    public int getWidthCirc() {
         return width;
     }
 
-    public int getHeightRect() {
+    public int getHeightCirc(){
         return height;
     }
-
-
 }
