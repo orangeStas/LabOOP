@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**
  * Created by OrangeUser on 21.02.2015.
  */
-public  class Figures extends JPanel {
+public class Figures extends JPanel {
     private static ArrayList<Figures> listOfFigures = new ArrayList<Figures>();
 
     private Line line;
@@ -39,23 +39,10 @@ public  class Figures extends JPanel {
     }
 
 
-
-    public void insertFigure(Figures figure){
-        listOfFigures.add(figure);
-    }
-
-    public Figures getFigure(int pos){
-        return listOfFigures.get(pos);
-    }
-
     public String getFigureName(Figures figure){
         return figure.getClass().toString().split(" ")[1];
     }
 
-
-    public ArrayList<Figures> getListOfFigures(){
-        return listOfFigures;
-    }
 
     public Figures drawFigure(){
         if (this.getClass() == Line.class) {
@@ -64,7 +51,7 @@ public  class Figures extends JPanel {
         }
 
         else if (this.getClass() == FiguresPack.Rectangle.class) {
-            Figures paint = new Figures((FiguresPack.Rectangle) this);
+            Figures paint = new Figures((Rectangle) this);
             return paint;
         }
 

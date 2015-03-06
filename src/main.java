@@ -1,4 +1,6 @@
+
 import FiguresPack.*;
+import FiguresPack.Rectangle;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,32 +24,35 @@ public class main {
         frame.setLayout(new GridBagLayout());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        Figures figures = new Figures();
+        FigureList list = new FigureList();
+
         //body
-        figures.insertFigure(new RoundRectangle(300,130,150,200, 50,40));
+        list.insertFigure(new RoundRectangle(300,130,150,200, 50,40));
 
         //head
-        figures.insertFigure(new Circle(315, 20, 120, 100));
-        figures.insertFigure(new Circle(340, 50, 12, 12));
-        figures.insertFigure(new Circle(390, 50, 12, 12));
-        figures.insertFigure(new Arc(345, 70, 60, 30, 180,  170));
+        list.insertFigure(new Circle(315, 20, 120, 100));
+        list.insertFigure(new Circle(340, 50, 12, 12));
+        list.insertFigure(new Circle(390, 50, 12, 12));
+        list.insertFigure(new Arc(345, 70, 60, 30, 180, 170));
 
         //legs
-        figures.insertFigure(new RoundRectangle(300,335, 40, 190, 20, 20));
-        figures.insertFigure(new RoundRectangle(410,335, 40, 190, 20, 20));
+        list.insertFigure(new RoundRectangle(300, 335, 40, 190, 20, 20));
+        list.insertFigure(new RoundRectangle(410, 335, 40, 190, 20, 20));
 
         //left hand
-        figures.insertFigure(new Line(300,140, 120, 160));
-        figures.insertFigure(new Line(300,170, 120, 180));
-        figures.insertFigure(new Circle(100,155, 20, 30));
-        figures.insertFigure(new Arc(100, 140, 7, 30, 0, 200));
+        list.insertFigure(new Line(300, 140, 120, 160));
+        list.insertFigure(new Line(300, 170, 120, 180));
+        list.insertFigure(new Circle(100, 155, 20, 30));
+        list.insertFigure(new Arc(110, 140, 8, 30, 0, 200));
+
+        //right hand
+        list.insertFigure(new Rectangle(455, 145, 25, 170));
 
 
-
-        for (Figures figure : figures.getListOfFigures()){
+        for (Figures figure : list.getListOfFigures()){
             frame.add(figure.drawFigure(), new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.NORTH
                     , GridBagConstraints.BOTH, new Insets(2, 2, 2, 2), 0, 0));
-            System.out.println(figures.getFigureName(figure));
+            System.out.println(list.getFigureName(figure));
         }
 
         frame.setVisible(true);
