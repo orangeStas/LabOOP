@@ -22,6 +22,7 @@ public class Figures extends JPanel {
     public Figures(Line line){
         this.line = line;
     }
+
     public Figures(Rectangle rectangle){
         this.rectangle = rectangle;
     }
@@ -46,28 +47,23 @@ public class Figures extends JPanel {
 
     public Figures drawFigure(){
         if (this.getClass() == Line.class) {
-            Figures paint = new Figures((Line)this);
-            return paint;
+            return new Figures((Line) this);
         }
 
         else if (this.getClass() == FiguresPack.Rectangle.class) {
-            Figures paint = new Figures((Rectangle) this);
-            return paint;
+            return new Figures((Rectangle) this);
         }
 
         else if (this.getClass() == Circle.class) {
-            Figures paint = new Figures((Circle)this);
-            return paint;
+            return new Figures((Circle) this);
         }
 
         else if (this.getClass() == RoundRectangle.class) {
-            Figures paint = new Figures((RoundRectangle) this);
-            return paint;
+            return new Figures((RoundRectangle) this);
         }
 
         else if (this.getClass() == Arc.class) {
-            Figures paint = new Figures((Arc) this);
-            return paint;
+            return new Figures((Arc) this);
         }
         else
             return null;

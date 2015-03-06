@@ -1,4 +1,3 @@
-
 import FiguresPack.*;
 import FiguresPack.Rectangle;
 
