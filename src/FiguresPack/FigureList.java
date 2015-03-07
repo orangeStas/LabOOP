@@ -1,13 +1,21 @@
 package FiguresPack;
 
-import java.util.ArrayList;
+import com.sun.javafx.UnmodifiableArrayList;
+
+import java.awt.*;
+import java.util.*;
+import java.util.List;
 
 /**
  * Created by OrangeUser on 3/6/2015.
  */
-public class FigureList extends Figures {
+public class FigureList {
 
-    private static ArrayList<Figures> listOfFigures = new ArrayList<Figures>();
+    private List<Figures> listOfFigures = new ArrayList<Figures>();
+
+    public FigureList(){
+
+    }
 
     public void insertFigure(Figures figure){
         listOfFigures.add(figure);
@@ -17,8 +25,15 @@ public class FigureList extends Figures {
         return listOfFigures.get(pos);
     }
 
-    public ArrayList<Figures> getListOfFigures(){
-        return listOfFigures;
+    public List<Figures> getListOfFigures(){
+        return new UnmodifiableArrayList(listOfFigures.toArray(),listOfFigures.size());
+    }
+
+    public void draw(Graphics g){
+        for (Figures figure : listOfFigures){
+            figure.paintFigure(g);
+        }
+
     }
 
 }

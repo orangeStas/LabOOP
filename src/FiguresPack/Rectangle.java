@@ -1,16 +1,11 @@
 package FiguresPack;
 
+import java.awt.*;
+
 /**
  * Created by OrangeUser on 21.02.2015.
  */
 public class Rectangle extends Figures {
-
-    private int width;
-    private int height;
-
-    private int x;
-    private int y;
-
 
     public Rectangle(int  x, int  y, int width, int height){
         this.x = x;
@@ -19,22 +14,8 @@ public class Rectangle extends Figures {
         this.width = width;
     }
 
-
-    public int getXRect() {
-        return x;
+    @Override
+    public void paintFigure(Graphics g) {
+        g.drawRect(x, y, width, height);
     }
-
-    public int getYRect() {
-        return y;
-    }
-
-    public int getWidthRect() {
-        return width;
-    }
-
-    public int getHeightRect() {
-        return height;
-    }
-
-
 }

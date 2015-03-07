@@ -1,60 +1,34 @@
 import FiguresPack.*;
-import FiguresPack.Rectangle;
 
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by OrangeUser on 21.02.2015.
- */
-public class main {
-    public static void main(String [] args){
-        initializeForm();
+public class main extends JFrame {
+    public main() {
+        super("Figures");
+        setSize(new Dimension(800, 600));
+        setLocationRelativeTo(null);
+        setLayout(new GridBagLayout());
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
     }
 
-    public static void initializeForm(){
-
-
-
-        JFrame frame = new JFrame();
-        frame.setTitle("Lol");
-        frame.setSize(new Dimension(800, 600));
-        frame.setLocationRelativeTo(null);
-        frame.setLayout(new GridBagLayout());
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+    @Override
+    public void paint(Graphics g) {
         FigureList list = new FigureList();
+        list.insertFigure(new Circle(315, 50, 120, 100));
+        list.insertFigure(new Circle(340, 80, 12, 12));
+        list.insertFigure(new Circle(390, 80, 12, 12));
+        list.insertFigure(new Arc(345, 100, 60, 30, 180, 170));
+        list.insertFigure(new RoundRectangle(30,30, 200, 100, 10, 10));
+        list.draw(g);
+    }
 
-        //body
-        list.insertFigure(new RoundRectangle(300,130,150,200, 50,40));
-
-        //head
-        list.insertFigure(new Circle(315, 20, 120, 100));
-        list.insertFigure(new Circle(340, 50, 12, 12));
-        list.insertFigure(new Circle(390, 50, 12, 12));
-        list.insertFigure(new Arc(345, 70, 60, 30, 180, 170));
-
-        //legs
-        list.insertFigure(new RoundRectangle(300, 335, 40, 190, 20, 20));
-        list.insertFigure(new RoundRectangle(410, 335, 40, 190, 20, 20));
-
-        //left hand
-        list.insertFigure(new Line(300, 140, 120, 160));
-        list.insertFigure(new Line(300, 170, 120, 180));
-        list.insertFigure(new Circle(100, 155, 20, 30));
-        list.insertFigure(new Arc(110, 140, 8, 30, 0, 200));
-
-        //right hand
-        list.insertFigure(new Rectangle(455, 145, 25, 170));
-
-
-        for (Figures figure : list.getListOfFigures()){
-            frame.add(figure.drawFigure(), new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.NORTH
-                    , GridBagConstraints.BOTH, new Insets(2, 2, 2, 2), 0, 0));
-            System.out.println(list.getFigureName(figure));
-        }
-
-        frame.setVisible(true);
-
+    public static void main(String args[]) {
+        main app = new main();
     }
 }
+
+
+
+

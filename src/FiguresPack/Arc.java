@@ -1,14 +1,12 @@
 package FiguresPack;
 
+import java.awt.*;
+
 /**
  * Created by OrangeUser on 22.02.2015.
  */
 public class Arc extends Figures {
 
-    private int x;
-    private int y;
-    private int width;
-    private int height;
     private int startAngle;
     private int arcAngle;
 
@@ -21,27 +19,10 @@ public class Arc extends Figures {
         this.arcAngle = arcAngle;
     }
 
-    public int getXArc(){
-        return x;
+    @Override
+    public void paintFigure(Graphics g){
+        g.drawArc(x, y, width, height, startAngle, arcAngle);
     }
 
-    public int getYArc(){
-        return y;
-    }
 
-    public int getWidthArc(){
-        return width;
-    }
-
-    public int getHeightArc(){
-        return height;
-    }
-
-    public int getStartAngleArc(){
-        return startAngle;
-    }
-
-    public int getArcAngleArc(){
-        return arcAngle;
-    }
 }
